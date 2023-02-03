@@ -1,0 +1,95 @@
+/*Estilos generales*/
+body {margin: 0px; padding: 0px; font-family: 'Nunito Sans', sans-serif; 
+    background-color: rgb(228, 239, 248);}
+h1{font-size: 28px;font-weight: 800;margin: 14px;}
+p,h3{margin:8px;}h3{font-weight: bolder;}
+
+/*Estilos de la sección con la foto e info personal*/
+.info_contacto {
+    top:0;
+    left: 0;
+    display: block;
+    position: fixed;
+    font: bold 14px verdana, serif;
+    text-align: center;
+    color: rgb(228, 239, 248);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+.dibujo{background-color: rgb(0, 0, 102); position:absolute; top:0; left:0; z-index:-1;}
+
+/*Estilos de sección general*/
+.contenido {
+    display: block;
+    text-align: center;
+}
+    /*Estilo de menú*/
+.contenido.seccion_top {
+    background-color: rgb(68, 196, 189); border: 2px solid rgb(0, 0, 117);
+    height: 150px; position: fixed;
+}
+.contenido.barra_categorias {
+    display: grid;
+    margin: 5px;
+    padding-left: 0px;
+    grid-template-columns: auto;
+    font-size: 36px; width: 100%;
+}
+.boton{width: 48px; border-radius: 100%;}
+.boton:hover{scale: 1.1;}
+.btn1{grid-area: 1/1/1/1; justify-self: center;}.btn2{grid-area: 1/2/1/2; justify-self: center;}
+.btn3{grid-area: 1/3/1/3; justify-self: center;}.btn4{grid-area: 1/4/1/4; justify-self: center;}
+    
+    /*Estilo de los parrafos con info*/
+.descripciones {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.info {
+    display: none; 
+    text-align: justify;
+    margin: 4px 8px 54px;    
+}
+
+/*animación de aparición de los textos*/
+.aparecer{
+    animation-name: aparición;
+    animation-duration: 0.3s;
+}
+@keyframes aparición{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+
+@media (min-width:926px){
+    /*A1 (Adaptación de ubicación y tamaño del bloque de info personal 
+    y de contacto en relación al resto)*/
+    .info_contacto{height: 100%; width: 24%;
+    }
+    .info_contacto img {
+        border-radius: 80%/50%;
+        width: 80%; margin: 10px;
+    }
+    div.contenido{padding-left: 25%;}
+    .contenido{top:0px;width: 74.5%;}
+    .descripciones{height: 75vh; margin-top: 150px;}
+}
+@media (max-width:925px){
+    /*A1*/
+    .info_contacto{
+        height: 150px; width: 100%; text-align: left;
+        display: grid; grid-template-columns: 150px auto; grid-auto-rows: 15px;
+    }
+    .info_contacto img {
+        border-radius: 80%/50%; width: 140px; margin: 10px;
+        grid-area: 1/1/10/1;
+    }
+    .IC_texto{grid-area: auto/2/auto/2;}
+    .contenido{width: 100%; top: 150px;}
+    .descripciones{height: 70vh; margin-top: 300px;}
+}
+
+/*
+Probar trabajar las alturas con porcentajes
+*/
